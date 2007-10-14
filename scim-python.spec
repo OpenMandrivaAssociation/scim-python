@@ -10,8 +10,8 @@ URL:		http://code.google.com/p/scim-python/
 Source0:	http://scim-python.googlecode.com/files/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	scim-devel gettext-devel
-BuildRequires:	pygtk2.0-devel
-Requires:	scim
+BuildRequires:	pygtk2.0-devel python-enchant
+Requires:	scim python-enchant
 
 %description
 Python wrapper for Smart Common Input Method platform.
@@ -20,7 +20,7 @@ Python wrapper for Smart Common Input Method platform.
 %setup -q
 
 %build
-%configure --disable-static
+%configure2_5x --disable-static
 %make
 
 %install
