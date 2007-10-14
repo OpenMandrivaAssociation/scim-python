@@ -37,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING README TODO
 %{python_sitearch}/scim-%{apiver}
 %{python_sitearch}/scim.pth
-%{scim_pluginsdir}/IMEngine/scim-python-engine.so
-%{scim_pluginsdir}/SetupUI/scim-python-setup.so
+%{scim_plugins_dir}/IMEngine/scim-python-engine.so
+%{scim_plugins_dir}/SetupUI/scim-python-setup.so
 %{_datadir}/scim-python/
 %{_datadir}/scim/icons/*
