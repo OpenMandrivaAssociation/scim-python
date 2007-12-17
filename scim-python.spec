@@ -8,7 +8,6 @@ License:	LGPLv2+
 Group:		System/Internationalization
 URL:		http://code.google.com/p/scim-python/
 Source0:	http://scim-python.googlecode.com/files/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	scim-devel gettext-devel
 BuildRequires:	pygtk2.0-devel python-enchant
 Requires:	scim python-enchant
