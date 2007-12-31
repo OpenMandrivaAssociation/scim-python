@@ -1,7 +1,7 @@
 %define apiver 0.1
 
 Name:		scim-python
-Version:	%{apiver}.4
+Version:	%{apiver}.8
 Release:	%mkrel 1
 Summary:	Python wrapper for Smart Common Input Method platform
 License:	LGPLv2+
@@ -10,7 +10,8 @@ URL:		http://code.google.com/p/scim-python/
 Source0:	http://scim-python.googlecode.com/files/%{name}-%{version}.tar.bz2
 BuildRequires:	scim-devel gettext-devel
 BuildRequires:	pygtk2.0-devel python-enchant
-Requires:	scim python-enchant
+Requires:	scim-client=%{scim_api}
+Requires:	python-enchant
 
 %description
 Python wrapper for Smart Common Input Method platform.
