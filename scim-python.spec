@@ -1,8 +1,8 @@
 %define apiver 0.1
 
 Name:		scim-python
-Version:	%{apiver}.8
-Release:	%mkrel 2
+Version:	%{apiver}.9
+Release:	%mkrel 1
 Summary:	Python wrapper for Smart Common Input Method platform
 License:	LGPLv2+
 Group:		System/Internationalization
