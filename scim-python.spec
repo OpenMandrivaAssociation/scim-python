@@ -1,6 +1,6 @@
 %define apiver 0.1
 
-%define build_plf 1
+%define build_plf 0
 %{?_with_plf: %{expand: %%global build_plf 1}}
 %if %build_plf
 %define distsuffix plf
