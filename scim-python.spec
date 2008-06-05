@@ -1,22 +1,13 @@
 %define apiver 0.1
 
-%define build_plf 0
-%{?_with_plf: %{expand: %%global build_plf 1}}
-%if %build_plf
-%define distsuffix plf
-%endif
-
 Name:		scim-python
-Version:	%{apiver}.11
+Version:	%{apiver}.12
 Release:	%mkrel 1
 Summary:	Python wrapper for Smart Common Input Method platform
 License:	LGPLv2+
 Group:		System/Internationalization
 URL:		http://code.google.com/p/scim-python/
 Source0:	http://scim-python.googlecode.com/files/%{name}-%{version}.tar.gz
-%if %build_plf
-Source1:	http://scim-python.googlecode.com/files/pinyin-database-0.1.10.5.tar.bz2
-%endif
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	scim-devel gettext-devel
 BuildRequires:	pygtk2.0-devel python-enchant
@@ -70,19 +61,9 @@ Conflicts:      %name < 0.1.9
 
 %description zh_CN
 This package contains a python chinese IM engine.
-%if %build_plf
-This package is in Plf because the data file used by PinYin
-is not free to redistribute. Check here (mainly term 3.3):
-	http://www.sogou.com/labs/dl/license.html
-%endif
 
 %files zh_CN
 %defattr(-,root,root,-)
-%if %build_plf
-%{_datadir}/scim-python/engine/PinYin
-%{_datadir}/scim-python/helper/PinYinSetup
-%{_datadir}/scim-python/helper/ZhengJuSetup
-%endif
 %_bindir/XMCreateDB
 %{_datadir}/scim-python/engine/XingMa
 %{_datadir}/scim-python/data/pinyin_table.txt
@@ -91,19 +72,10 @@ is not free to redistribute. Check here (mainly term 3.3):
 
 %prep
 %setup -q
-%if %build_plf
-cd python/engine/PinYin
-tar jxvf %{SOURCE1}
-cd -
-%endif
 
 %build
 %configure2_5x --disable-static \
-%if %build_plf
-	--enable-pinyin
-%else
 	--disable-pinyin
-%endif
 %make
 
 %install
