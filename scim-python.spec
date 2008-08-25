@@ -2,12 +2,13 @@
 
 Name:		scim-python
 Version:	%{apiver}.12
-Release:	%mkrel 2
+Release:	%mkrel 3
 Summary:	Python wrapper for Smart Common Input Method platform
 License:	LGPLv2+
 Group:		System/Internationalization
 URL:		http://code.google.com/p/scim-python/
 Source0:	http://scim-python.googlecode.com/files/%{name}-%{version}.tar.gz
+Source1:	http://scim-python.googlecode.com/files/pinyin-database-0.1.10.5.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	scim-devel gettext-devel
 BuildRequires:	pygtk2.0-devel python-enchant
@@ -67,15 +68,18 @@ This package contains a python chinese IM engine.
 %_bindir/XMCreateDB
 %{_datadir}/scim-python/engine/XingMa
 %{_datadir}/scim-python/data/pinyin_table.txt
+%{_datadir}/scim-python/engine/PinYin
+%{_datadir}/scim-python/helper/PinYinSetup
+%{_datadir}/scim-python/helper/ZhengJuSetup
 
 #-----------------------------------------------------------
 
 %prep
 %setup -q
+cp %{SOURCE1} python/engine/PinYin/
 
 %build
-%configure2_5x --disable-static \
-	--disable-pinyin
+%configure2_5x --disable-static
 %make
 
 %install
