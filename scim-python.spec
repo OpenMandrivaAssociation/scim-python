@@ -6,7 +6,7 @@ Release:	%mkrel 6
 Summary:	Python wrapper for Smart Common Input Method platform
 License:	LGPLv2+
 Group:		System/Internationalization
-URL:		http://code.google.com/p/scim-python/
+URL:		https://code.google.com/p/scim-python/
 Source0:	http://scim-python.googlecode.com/files/%{name}-%{version}.tar.gz
 Source1:	http://scim-python.googlecode.com/files/pinyin-database-0.1.10.5.tar.bz2
 Patch0:		scim-python-0.1.12-linkage.patch
