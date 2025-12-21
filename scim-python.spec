@@ -11,6 +11,11 @@ Source0:	http://scim-python.googlecode.com/files/%{name}-%{version}.tar.gz
 Source1:	http://scim-python.googlecode.com/files/pinyin-database-0.1.10.5.tar.bz2
 Patch0:		scim-python-0.1.12-linkage.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	scim-devel gettext-devel
 BuildRequires:	pygtk2.0-devel python-enchant
 Requires:	scim-client = %{scim_api}
